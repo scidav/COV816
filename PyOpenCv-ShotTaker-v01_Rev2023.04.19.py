@@ -8,10 +8,10 @@ import time
 ensayo_ID = "CalibrationImages"
 
 # Storing directory
-directorio_de_trabajo = "C:/Temp"
-os.chdir(directorio_de_trabajo)
+workingDirectory = "C:/Temp"
+os.chdir(workingDirectory)
 
-o_pth = '{0:}/{1:}'.format(directorio_de_trabajo, ensayo_ID)
+o_pth = '{0:}/{1:}'.format(workingDirectory, ensayo_ID)
 
 # Verify if there is a directorio_de_trabajo or create if there isn't
 if not os.path.exists(o_pth):
@@ -43,13 +43,12 @@ while True:
     elif k%256 == 32:
         # SPACE pressed
         # =====================
-        # obter tempo instantâneo
+        # Get current time
         now = datetime.now()
-        # formatação do tempo instantâneo em formato string
+        # Add the desired string format to the current time
         current_time = now.strftime('%Y-%m-%d_%H.%M.%S.%f')[:-3]
-        # img_name = "opencv_frame_{}.png".format(img_counter)
+        # Sve the frame to the working directory
         cv2.imwrite(o_pth+'/{0:}_{2:}_{1:}.jpg'.format(ensayo_ID,current_time,str(img_counter).zfill(5)), frame)
-        # cv2.imwrite(img_name, frame)
         print("Image {0:03} written!".format(img_counter))
         img_counter += 1
 
