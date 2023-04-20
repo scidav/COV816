@@ -1,6 +1,8 @@
 import cv2
 import os
 import numpy as np
+from datetime import datetime
+import time
 
 # Test Name
 ensayo_ID = "CalibrationImages"
@@ -16,14 +18,10 @@ if not os.path.exists(o_pth):
     os.makedirs(o_pth)
 
 
-
-
-
-
-cam = cv2.VideoCapture(0, cv.CAP_DSHOW)
+cam = cv2.VideoCapture(1, cv2.CAP_DSHOW)
 hres,vres = 1280, 720
-cap.set(cv.CAP_PROP_FRAME_WIDTH, hres)
-cap.set(cv.CAP_PROP_FRAME_HEIGHT,vres)
+cam.set(cv2.CAP_PROP_FRAME_WIDTH, hres)
+cam.set(cv2.CAP_PROP_FRAME_HEIGHT,vres)
 
 cv2.namedWindow("Image Viewer")
 
@@ -35,7 +33,7 @@ while True:
     if not ret:
         print("failed to grab frame")
         break
-    cv2.imshow("test", frame)
+    cv2.imshow("Image Viewer", frame)
 
     k = cv2.waitKey(1)
     if k%256 == 27:
@@ -44,9 +42,15 @@ while True:
         break
     elif k%256 == 32:
         # SPACE pressed
-        img_name = "opencv_frame_{}.png".format(img_counter)
-        cv2.imwrite(img_name, frame)
-        print("{} written!".format(img_name))
+        # =====================
+        # obter tempo instantâneo
+        now = datetime.now()
+        # formatação do tempo instantâneo em formato string
+        current_time = now.strftime('%Y-%m-%d_%H.%M.%S.%f')[:-3]
+        # img_name = "opencv_frame_{}.png".format(img_counter)
+        cv2.imwrite(o_pth+'/{0:}_{2:}_{1:}.jpg'.format(ensayo_ID,current_time,str(img_counter).zfill(5)), frame)
+        # cv2.imwrite(img_name, frame)
+        print("Image {0:03} written!".format(img_counter))
         img_counter += 1
 
 cam.release()
