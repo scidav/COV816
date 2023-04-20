@@ -45,7 +45,7 @@ while True:
         break
     #
     # Mostrar a imagen capturada
-    sf = 0.5
+    sf = 0.3
     dImage  = frame
     uImage  = cv.undistort(dImage, mtx, dist, None, None)
     dIma_r  = cv.resize(dImage, (int(sf*hres),int(sf*vres)))

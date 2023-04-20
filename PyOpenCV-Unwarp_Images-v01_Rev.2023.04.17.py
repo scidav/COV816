@@ -45,26 +45,31 @@ def unwarp(img, src, dst, testing):
 
 
 # ==================================================================
-inputImage = cv2.imread("myImage2.jpg")
+inputImage = cv2.imread("myImage3.jpg")
 
 # We will first manually select the source points 
 # we will select the destination point which will map the source points in
 # original image to destination points in unwarped image
-src = np.float32([(380, 327),
-                  (429, 162),
-                  (482, 350),
-                  (529, 166)])
+src = np.float32([(144, 276),
+                  (79, 116),
+                  (241, 241),
+                  (166, 92)
+                  ])
 
 
 
-height, width= 270, 430
+height, width= 180, 100
 delta = 50
 
 dst = np.float32([(delta,              delta),
-                  (delta+width,        delta),
-                  (delta,       height+delta),
-                  (delta+width, height+delta)])
+                  (delta+height,        delta),
+                  (delta,       width+delta),
+                  (delta+height, width+delta)])
 
+# dst = np.float32([(delta,              delta),
+#                   (delta+width,        delta),
+#                   (delta,       height+delta),
+#                   (delta+width, height+delta)])
 
 
 unwarp(inputImage, src, dst, True)
