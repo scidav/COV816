@@ -6,8 +6,8 @@ import os
 
 
 # Calibration file directory
-directorio_de_trabajo = "C:/Temp/CalibrationImages"
-os.chdir(o_pth)
+calibrationPath = "C:/Temp/CalibrationImages"
+os.chdir(calibrationPath)
 
 # Method 02 - Loading stored parameters
 def loadMatrices(fileName):
@@ -23,7 +23,7 @@ mtx, dist, rv, tv = loadMatrices("calibrationParameters.npy")
 
 
 # Camera configuration
-cap = cv.VideoCapture(0, cv.CAP_DSHOW) # this is the magic!
+cap = cv.VideoCapture(1, cv.CAP_DSHOW) # this is the magic!
 hres,vres = 1280, 720
 cap.set(cv.CAP_PROP_FRAME_WIDTH, hres)
 cap.set(cv.CAP_PROP_FRAME_HEIGHT,vres)
