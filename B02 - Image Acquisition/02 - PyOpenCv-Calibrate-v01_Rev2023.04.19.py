@@ -7,7 +7,7 @@ import yaml
 import matplotlib.pyplot as plt
 
 # Test Name
-ensayo_ID = "CalibrationImages"
+ensayo_ID = "CalibrationImages_f"
 
 # Storing directory
 directorio_de_trabajo = "C:/Temp"
@@ -21,7 +21,7 @@ if not os.path.exists(o_pth):
 
 
 # Define the dimensions of checkerboard
-CHECKERBOARD = (5, 8)
+CHECKERBOARD = (4, 8)
 
 
 # stop the iteration when specified

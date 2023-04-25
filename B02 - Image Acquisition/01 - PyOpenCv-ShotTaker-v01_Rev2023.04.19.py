@@ -5,7 +5,7 @@ from datetime import datetime
 import time
 
 # Test Name
-ensayo_ID = "CalibrationImages"
+ensayo_ID = "CalibrationImages_f"
 
 # Storing directory
 workingDirectory = "C:/Temp"
