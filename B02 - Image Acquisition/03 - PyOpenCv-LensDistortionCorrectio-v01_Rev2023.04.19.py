@@ -6,7 +6,7 @@ import os
 
 
 # Calibration file directory
-calibrationPath = "C:/Temp/CalibrationImages_old"
+calibrationPath = "C:/Temp/CalibrationImages_f"
 os.chdir(calibrationPath)
 
 # Method 02 - Loading stored parameters

@@ -21,7 +21,7 @@ if not os.path.exists(o_pth):
 
 
 # Define the dimensions of checkerboard
-CHECKERBOARD = (5, 7)
+CHECKERBOARD = (5, 8)
 
 
 # stop the iteration when specified
@@ -75,6 +75,7 @@ for filename in images:
         twodpoints.append(corners2)
   
         # Draw and display the corners
+
         image = cv2.drawChessboardCorners(image, CHECKERBOARD, corners2, ret)
   
     cv2.imshow('img', image)
@@ -161,8 +162,8 @@ print(t_vecs)
 distortedImage = cv2.imread(images[1])
 
 # Undistort the image
-undistortedImage = cv2.undistort(distortedImage, mtx, dist, None, None)
-
+undistortedImage0 = cv2.undistort(distortedImage, mtx, dist, None, None)
+undistortedImage = cv2.cvtColor(undistortedImage0,cv2.COLOR_BGR2RGB)
 # Crop the image. Uncomment these two lines to remove black lines
 # on the edge of the undistorted image.
 #x, y, w, h = roi
