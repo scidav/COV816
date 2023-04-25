@@ -21,7 +21,7 @@ if not os.path.exists(o_pth):
 
 
 # Define the dimensions of checkerboard
-CHECKERBOARD = (4, 8)
+CHECKERBOARD = (5, 7)
 
 
 # stop the iteration when specified
