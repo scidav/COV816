@@ -6,7 +6,7 @@ This is a temporary script file.
 """
 
 import os
-basePath = r""
+basePath = r"Set the path here"
 
 
 os.chdir(basePath)
