@@ -18,7 +18,7 @@ if not os.path.exists(o_pth):
     os.makedirs(o_pth)
 
 
-cam = cv2.VideoCapture(1, cv2.CAP_DSHOW)
+cam = cv2.VideoCapture(0, cv2.CAP_DSHOW)
 hres,vres = 1280, 720
 cam.set(cv2.CAP_PROP_FRAME_WIDTH, hres)
 cam.set(cv2.CAP_PROP_FRAME_HEIGHT,vres)
