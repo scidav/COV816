@@ -2,7 +2,7 @@
 """
 Author:    Irving D. Hernández
 Filiation: NEO-COPPE/UFRJ
-Version: 2-B >> 2023-04-11 00:07:50.234 (Brasil)
+Version: 2-B >> 2024-04-11 00:07:50.234 (Brasil)
 """
 
 import numpy as np
@@ -12,10 +12,10 @@ import time
 import os
 
 # Test Name
-ensayo_ID = "01 - Felipe-Walk_Single"
+ensayo_ID = "TestName"
 
 # Storing directory
-directorio_de_trabajo = "C:/Users/idavi/Downloads"
+directorio_de_trabajo = "C:/COV816"
 os.chdir(directorio_de_trabajo)
 
 o_pth = '{0:}/{1:}'.format(directorio_de_trabajo, ensayo_ID)
